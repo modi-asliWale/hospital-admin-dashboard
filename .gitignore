@@ -1,0 +1,64 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+pnpm-lock.yaml
+bun.lockb
+
+# Build output
+build/
+dist/
+.next/
+out/
+.vite/
+coverage/
+.nyc_output/
+.cache/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pya
+*.pdb
+*.pyc
+*.pys
+*.pzw
+*.egg
+*.egg-info/
+dist-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Logs
+logs/
+*.log
+
+# Databases
+*.sqlite
+*.sqlite3
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Misc
+node_modules.tar
