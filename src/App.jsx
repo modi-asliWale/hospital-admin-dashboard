@@ -9,6 +9,7 @@ import ERDashboard from './pages/ERDashboard';
 import ClinicalQuality from './pages/ClinicalQuality';
 import StaffManagement from './pages/StaffManagement';
 import FinancialPerformance from './pages/FinancialPerformance';
+import OperationalEfficiency from './pages/OperationalEfficiency';
 import { ThemeContextProvider } from './context/ThemeContext';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
               <Route path="/clinical-quality" element={<ClinicalQuality />} />
               <Route path="/staff" element={<StaffManagement />} />
               <Route path="/finance" element={<FinancialPerformance />} />
+              <Route path="/operational-efficiency" element={<OperationalEfficiency />} />
             </Routes>
           </Box>
         </Box>

@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography, Box } from '@mui/material';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, ComposedChart } from 'recharts';
+import { Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, ComposedChart } from 'recharts';
 import { revenueTrendData } from '../../data/financialMockData';
 
 const RevenueTrendLine = () => {
