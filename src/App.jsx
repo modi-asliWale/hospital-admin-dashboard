@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { Box, Toolbar } from '@mui/material';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import Sidebar from './components/common/Sidebar';
 import Home from './pages/Home';
+import PatientFlow from './pages/PatientFlow';
 import { ThemeContextProvider } from './context/ThemeContext';
 
 function App() {
@@ -28,7 +29,10 @@ function App() {
             }}
           >
             <Toolbar />
-            <Home />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/patient-flow" element={<PatientFlow />} />
+            </Routes>
           </Box>
         </Box>
       </Router>
