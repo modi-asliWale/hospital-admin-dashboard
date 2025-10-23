@@ -13,6 +13,7 @@ import {
   MedicalServices,
   HealthAndSafety,
   Speed,
+  Gavel,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
@@ -22,6 +23,7 @@ const menuItems = [
   { text: 'ER Dashboard', icon: MedicalServices, path: '/er-dashboard' },
   { text: 'Patient Flow & Capacity', icon: LocalHospital, path: '/patient-flow' },
   { text: 'Clinical Quality & Safety', icon: HealthAndSafety, path: '/clinical-quality' },
+  { text: 'Compliance & Regulatory', icon: Gavel, path: '/compliance' },
   { text: 'Operational Efficiency', icon: Speed, path: '/operational-efficiency' },
   { text: 'Patient Management', icon: People, path: '/patients' },
   { text: 'Staff Management', icon: Person, path: '/staff' },
