@@ -1,5 +1,5 @@
 import { Grid, Box, Typography, LinearProgress } from '@mui/material';
-import { Shield, LocalHospital, MedicalServices, FallOutlined } from '@mui/icons-material';
+import { Shield, LocalHospital, MedicalServices, Warning } from '@mui/icons-material';
 import Card from '../common/Card';
 import { safetyScorecardsData } from '../../data/clinicalQualityMockData';
 
@@ -15,7 +15,7 @@ const SafetyScorecards = () => {
       case 'Surgical Safety':
         return MedicalServices;
       case 'Fall Prevention':
-        return FallOutlined;
+        return Warning;
       default:
         return Shield;
     }

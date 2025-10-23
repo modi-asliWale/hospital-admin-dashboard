@@ -1,5 +1,5 @@
 import { Grid, Box, Typography, LinearProgress } from '@mui/material';
-import { SentimentSatisfied, Star } from '@mui/icons-material';
+import { SentimentSatisfied } from '@mui/icons-material';
 import Card from '../common/Card';
 import { satisfactionScoresData } from '../../data/clinicalQualityMockData';
 

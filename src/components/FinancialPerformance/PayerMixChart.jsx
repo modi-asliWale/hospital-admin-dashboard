@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography, Box, Grid } from '@mui/material';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { payerMixData } from '../../data/financialMockData';
 
 const PayerMixChart = () => {
