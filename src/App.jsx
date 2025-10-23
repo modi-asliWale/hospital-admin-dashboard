@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import PatientFlow from './pages/PatientFlow';
 import ERDashboard from './pages/ERDashboard';
 import ClinicalQuality from './pages/ClinicalQuality';
+import StaffManagement from './pages/StaffManagement';
 import { ThemeContextProvider } from './context/ThemeContext';
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
               <Route path="/patient-flow" element={<PatientFlow />} />
               <Route path="/er-dashboard" element={<ERDashboard />} />
               <Route path="/clinical-quality" element={<ClinicalQuality />} />
+              <Route path="/staff" element={<StaffManagement />} />
             </Routes>
           </Box>
         </Box>
