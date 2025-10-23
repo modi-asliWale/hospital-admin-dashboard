@@ -11,6 +11,7 @@ import {
   Logout,
   LocalHospital,
   MedicalServices,
+  HealthAndSafety,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
@@ -19,6 +20,7 @@ const menuItems = [
   { text: 'Dashboard', icon: Dashboard, path: '/' },
   { text: 'ER Dashboard', icon: MedicalServices, path: '/er-dashboard' },
   { text: 'Patient Flow & Capacity', icon: LocalHospital, path: '/patient-flow' },
+  { text: 'Clinical Quality & Safety', icon: HealthAndSafety, path: '/clinical-quality' },
   { text: 'Patient Management', icon: People, path: '/patients' },
   { text: 'Staff Management', icon: Person, path: '/staff' },
   { text: 'Financial Overview', icon: AttachMoney, path: '/finance' },
