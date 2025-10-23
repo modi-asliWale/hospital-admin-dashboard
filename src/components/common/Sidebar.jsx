@@ -1,4 +1,5 @@
 import { Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Box } from '@mui/material';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Dashboard,
   People,
@@ -8,12 +9,14 @@ import {
   Assessment,
   Settings,
   Logout,
+  LocalHospital,
 } from '@mui/icons-material';
 
 const drawerWidth = 240;
 
 const menuItems = [
   { text: 'Dashboard', icon: Dashboard, path: '/' },
+  { text: 'Patient Flow & Capacity', icon: LocalHospital, path: '/patient-flow' },
   { text: 'Patient Management', icon: People, path: '/patients' },
   { text: 'Staff Management', icon: Person, path: '/staff' },
   { text: 'Financial Overview', icon: AttachMoney, path: '/finance' },
@@ -23,6 +26,16 @@ const menuItems = [
 ];
 
 const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    if (mobileOpen) {
+      onDrawerToggle();
+    }
+  };
+
   const drawer = (
     <Box>
       <Toolbar />
@@ -30,6 +43,7 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
         {menuItems.map((item) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton
+              onClick={() => handleNavigation(item.path)}
               sx={{
                 '&:hover': {
                   bgcolor: 'action.hover',
@@ -45,9 +59,9 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
                   },
                 },
               }}
-              selected={item.path === '/'}
+              selected={location.pathname === item.path}
             >
-              <ListItemIcon sx={{ color: item.path === '/' ? 'white' : 'inherit' }}>
+              <ListItemIcon sx={{ color: location.pathname === item.path ? 'white' : 'inherit' }}>
                 <item.icon />
               </ListItemIcon>
               <ListItemText primary={item.text} />
