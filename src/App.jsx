@@ -6,6 +6,7 @@ import Sidebar from './components/common/Sidebar';
 import Home from './pages/Home';
 import PatientFlow from './pages/PatientFlow';
 import ERDashboard from './pages/ERDashboard';
+import ClinicalQuality from './pages/ClinicalQuality';
 import { ThemeContextProvider } from './context/ThemeContext';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/patient-flow" element={<PatientFlow />} />
               <Route path="/er-dashboard" element={<ERDashboard />} />
+              <Route path="/clinical-quality" element={<ClinicalQuality />} />
             </Routes>
           </Box>
         </Box>
