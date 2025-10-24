@@ -8,7 +8,7 @@ import {
 } from '@mui/icons-material';
 import { useTheme } from '../../hooks/useTheme';
 
-const Header = ({ onMenuClick }) => {
+const Header = ({ onMenuClick, isMenuOpen = false }) => {
   const { mode, toggleTheme } = useTheme();
 
   return (
@@ -26,6 +26,9 @@ const Header = ({ onMenuClick }) => {
           edge="start"
           color="inherit"
           onClick={onMenuClick}
+          aria-label="Open navigation menu"
+          aria-controls="primary-navigation"
+          aria-expanded={isMenuOpen ? 'true' : 'false'}
           sx={{ mr: 2, display: { sm: 'none' } }}
         >
           <MenuIcon />
@@ -57,13 +60,17 @@ const Header = ({ onMenuClick }) => {
 
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <Tooltip title={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}>
-            <IconButton onClick={toggleTheme} color="inherit">
+            <IconButton
+              onClick={toggleTheme}
+              color="inherit"
+              aria-label={`Switch to ${mode === 'light' ? 'dark' : 'light'} theme`}
+            >
               {mode === 'light' ? <Brightness4 /> : <Brightness7 />}
             </IconButton>
           </Tooltip>
 
           <Tooltip title="Notifications">
-            <IconButton color="inherit">
+            <IconButton color="inherit" aria-label="View notifications">
               <Badge badgeContent={3} color="error">
                 <Notifications />
               </Badge>
@@ -71,7 +78,7 @@ const Header = ({ onMenuClick }) => {
           </Tooltip>
 
           <Tooltip title="Profile">
-            <IconButton color="inherit">
+            <IconButton color="inherit" aria-label="Open user profile menu" aria-haspopup="true">
               <Avatar sx={{ width: 32, height: 32, bgcolor: 'primary.main' }}>
                 <AccountCircle />
               </Avatar>
