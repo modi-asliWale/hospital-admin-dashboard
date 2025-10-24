@@ -47,9 +47,9 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
   const drawer = (
     <Box>
       <Toolbar />
-      <List>
+      <List component="ul" aria-label="Primary navigation links">
         {menuItems.map((item) => (
-          <ListItem key={item.text} disablePadding>
+          <ListItem key={item.text} component="li" disablePadding>
             <ListItemButton
               onClick={() => handleNavigation(item.path)}
               sx={{
@@ -68,6 +68,7 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
                 },
               }}
               selected={location.pathname === item.path}
+              aria-current={location.pathname === item.path ? 'page' : undefined}
             >
               <ListItemIcon sx={{ color: location.pathname === item.path ? 'white' : 'inherit' }}>
                 <item.icon />
@@ -78,8 +79,8 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
         ))}
       </List>
       <Box sx={{ mt: 'auto', p: 2 }}>
-        <ListItem disablePadding>
-          <ListItemButton>
+        <ListItem component="li" disablePadding>
+          <ListItemButton aria-label="Log out">
             <ListItemIcon>
               <Logout />
             </ListItemIcon>
@@ -93,6 +94,8 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
   return (
     <Box
       component="nav"
+      id="primary-navigation"
+      aria-label="Primary navigation"
       sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
     >
       <Drawer
@@ -100,6 +103,7 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
         open={mobileOpen}
         onClose={onDrawerToggle}
         ModalProps={{ keepMounted: true }}
+        PaperProps={{ 'aria-label': 'Mobile navigation drawer' }}
         sx={{
           display: { xs: 'block', sm: 'none' },
           '& .MuiDrawer-paper': { 
@@ -113,6 +117,7 @@ const Sidebar = ({ mobileOpen, onDrawerToggle }) => {
       </Drawer>
       <Drawer
         variant="permanent"
+        PaperProps={{ 'aria-label': 'Desktop navigation drawer' }}
         sx={{
           display: { xs: 'none', sm: 'block' },
           '& .MuiDrawer-paper': { 
